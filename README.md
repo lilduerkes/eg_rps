@@ -1,2 +1,4 @@
 # eg_rps
- javascript rock-paper-scissors game
+A basic javascript rock-paper-scissors game
+
+Feel free to use as you see fit.
