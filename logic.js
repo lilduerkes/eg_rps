@@ -1,19 +1,19 @@
 // called by body onload, sets initial image for opponent
 function initPick() {
-  var init = "img/mystery.svg";
+  let init = "img/mystery.svg";
   document.getElementById('oppResult').src = init;
 }
 // called by onclick when rock button is clicked
 function rockPick() {
   // generates a random pick for opponent
   function genPick() {
-    var pick = "img/mystery.svg";
+    let pick = "img/mystery.svg";
     if (Math.floor(Math.random() * 3) == 2) {
-      var pick = "img/rock.svg";
+      pick = "img/rock.svg";
     } else if (Math.floor(Math.random() * 3) == 1) {
-      var pick = "img/paper.svg";
+      pick = "img/paper.svg";
     } else {
-      var pick = "img/scissors.svg";
+      pick = "img/scissors.svg";
     }
     // sets the opponent's image for the generated pick
     document.getElementById('oppResult').src = pick;
@@ -33,13 +33,13 @@ function rockPick() {
 function paperPick() {
   // generates a random pick for opponent
   function genPick() {
-    var pick = "img/mystery.svg";
+    let pick = "img/mystery.svg";
     if (Math.floor(Math.random() * 3) == 2) {
-      var pick = "img/rock.svg";
+      pick = "img/rock.svg";
     } else if (Math.floor(Math.random() * 3) == 1) {
-      var pick = "img/paper.svg";
+      pick = "img/paper.svg";
     } else {
-      var pick = "img/scissors.svg";
+      pick = "img/scissors.svg";
     }
     // sets the opponent's image for the generated pick
     document.getElementById('oppResult').src = pick;
@@ -59,13 +59,13 @@ function paperPick() {
 function scissorsPick() {
   // generates a random pick for opponent
   function genPick() {
-    var pick = "img/mystery.svg";
+    let pick = "img/mystery.svg";
     if (Math.floor(Math.random() * 3) == 2) {
-      var pick = "img/rock.svg";
+      pick = "img/rock.svg";
     } else if (Math.floor(Math.random() * 3) == 1) {
-      var pick = "img/paper.svg";
+      pick = "img/paper.svg";
     } else {
-      var pick = "img/scissors.svg";
+      pick = "img/scissors.svg";
     }
     // sets the opponent's image for the generated pick
     document.getElementById('oppResult').src = pick;
