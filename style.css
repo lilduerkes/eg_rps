@@ -77,3 +77,15 @@ main {
 .btn:hover {
   opacity: 0.5;
 }
+
+.choices img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
+
+.opp-pick img {
+  width: 70px;
+  height: auto;
+  object-fit: contain;
+}
