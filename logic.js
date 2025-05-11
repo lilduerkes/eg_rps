@@ -1,3 +1,7 @@
+let wins = 0;
+let losses = 0;
+let ties = 0;
+
 function initPick() {
   setOpponentPick("img/mystery.svg");
 }
@@ -12,17 +16,40 @@ function getRandomPick() {
 }
 
 function updateResult(playerPick, opponentPick) {
+  let resultText = "";
+
   if (playerPick === opponentPick) {
-    document.getElementById('result').innerHTML = "It's a Tie";
+    ties++;
+    resultText = "It's a Tie";
   } else if (
     (playerPick === "img/coolRock.png" && opponentPick === "img/fireeee.png") ||
     (playerPick === "img/fireeee.png" && opponentPick === "img/waterrrr.png") ||
     (playerPick === "img/waterrrr.png" && opponentPick === "img/coolRock.png")
   ) {
-    document.getElementById('result').innerHTML = "You Win!";
+    wins++;
+    resultText = "You Win!";
   } else {
-    document.getElementById('result').innerHTML = "You Lose";
+    losses++;
+    resultText = "You Lose";
   }
+
+  document.getElementById('result').innerHTML = resultText;
+  updateScoreboard();
+}
+
+function updateScoreboard() {
+  document.getElementById('wins').textContent = wins;
+  document.getElementById('losses').textContent = losses;
+  document.getElementById('ties').textContent = ties;
+}
+
+function resetScore() {
+  wins = 0;
+  losses = 0;
+  ties = 0;
+  updateScoreboard();
+  document.getElementById('result').innerHTML = "&nbsp;";
+  initPick();
 }
 
 function rockPick() {

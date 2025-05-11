@@ -15,13 +15,14 @@
             <img src="img/coolRock.png" alt="cartoon rock">
           </a>
           <a class="paper" onclick="paperPick()">
-            <img src="img/fireeee.png" alt="paper-hand">
+            <img src="img/fireeee.png" alt="cartoon fire">
           </a>
           <a class="scissors" onclick="scissorsPick()">
-            <img src="img/waterrrr.png" alt="scissor-hand">
+            <img src="img/waterrrr.png" alt="cartoon water">
           </a>
         </div>
       </section>
+
       <section class="opp">
         <h3>Opponent Chooses</h3>
         <div class="opp-pick">
@@ -29,9 +30,19 @@
         </div>
       </section>
     </main>
+
     <div class="result-wrapper">
       <h1 id="result">&nbsp;</h1>
     </div>
-  <script src="logic.js"></script>
+
+    <div class="scoreboard">
+      <h2>Scoreboard</h2>
+      <p>Wins: <span id="wins">0</span></p>
+      <p>Losses: <span id="losses">0</span></p>
+      <p>Ties: <span id="ties">0</span></p>
+      <button onclick="resetScore()">Reset Score</button>
+    </div>
+
+    <script src="logic.js"></script>
   </body>
 </html>
