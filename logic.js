@@ -1,83 +1,47 @@
-// called by body onload, sets initial image for opponent
 function initPick() {
-  let init = "img/mystery.svg";
-  document.getElementById('oppResult').src = init;
+  setOpponentPick("img/mystery.svg");
 }
-// called by onclick when rock button is clicked
+
+function setOpponentPick(pick) {
+  document.getElementById('oppResult').src = pick;
+}
+
+function getRandomPick() {
+  const picks = ["img/coolRock.png", "img/fireeee.png", "img/waterrrr.png"];
+  return picks[Math.floor(Math.random() * picks.length)];
+}
+
+function updateResult(playerPick, opponentPick) {
+  if (playerPick === opponentPick) {
+    document.getElementById('result').innerHTML = "It's a Tie";
+  } else if (
+    (playerPick === "img/coolRock.png" && opponentPick === "img/fireeee.png") ||
+    (playerPick === "img/fireeee.png" && opponentPick === "img/waterrrr.png") ||
+    (playerPick === "img/waterrrr.png" && opponentPick === "img/coolRock.png")
+  ) {
+    document.getElementById('result').innerHTML = "You Win!";
+  } else {
+    document.getElementById('result').innerHTML = "You Lose";
+  }
+}
+
 function rockPick() {
-  // generates a random pick for opponent
-  function genPick() {
-    let pick = "img/mystery.svg";
-    if (Math.floor(Math.random() * 3) == 2) {
-      pick = "img/coolRock.png";
-    } else if (Math.floor(Math.random() * 3) == 1) {
-      pick = "img/fireeee.png";
-    } else {
-      pick = "img/waterrrr.png";
-    }
-    // sets the opponent's image for the generated pick
-    document.getElementById('oppResult').src = pick;
-    // comparison logic
-    if (pick == "img/coolRock.png") {
-      document.getElementById('result').innerHTML = "It's a Tie";
-    } else if (pick == "img/fireeee.png") {
-      document.getElementById('result').innerHTML = "You Lose";
-    } else {
-      document.getElementById('result').innerHTML = "You Win!";
-    }
-  }
-  // runs the function
-  genPick();
+  const playerPick = "img/coolRock.png";
+  const opponentPick = getRandomPick();
+  setOpponentPick(opponentPick);
+  updateResult(playerPick, opponentPick);
 }
-// called by onclick when paper button is clicked
+
 function paperPick() {
-  // generates a random pick for opponent
-  function genPick() {
-    let pick = "img/mystery.svg";
-    if (Math.floor(Math.random() * 3) == 2) {
-      pick = "img/coolRock.png";
-    } else if (Math.floor(Math.random() * 3) == 1) {
-      pick = "img/fireeee.png";
-    } else {
-      pick = "img/waterrrr.png";
-    }
-    // sets the opponent's image for the generated pick
-    document.getElementById('oppResult').src = pick;
-    // comparison logic
-    if (pick == "img/fireeee.png") {
-      document.getElementById('result').innerHTML = "It's a Tie";
-    } else if (pick == "img/waterrrr.png") {
-      document.getElementById('result').innerHTML = "You Lose";
-    } else {
-      document.getElementById('result').innerHTML = "You Win!";
-    }
-  }
-  // runs the function
-  genPick();
+  const playerPick = "img/fireeee.png";
+  const opponentPick = getRandomPick();
+  setOpponentPick(opponentPick);
+  updateResult(playerPick, opponentPick);
 }
-// called by onclick when scissors button is clicked
+
 function scissorsPick() {
-  // generates a random pick for opponent
-  function genPick() {
-    let pick = "img/mystery.svg";
-    if (Math.floor(Math.random() * 3) == 2) {
-      pick = "img/coolRock.png";
-    } else if (Math.floor(Math.random() * 3) == 1) {
-      pick = "img/fireeee.png";
-    } else {
-      pick = "img/waterrrr.png";
-    }
-    // sets the opponent's image for the generated pick
-    document.getElementById('oppResult').src = pick;
-    // comparison logic
-    if (pick == "img/waterrrr.png") {
-      document.getElementById('result').innerHTML = "It's a Tie";
-    } else if (pick == "img/coolRock.png") {
-      document.getElementById('result').innerHTML = "You Lose";
-    } else {
-      document.getElementById('result').innerHTML = "You Win!";
-    }
-  }
-  // runs the function
-  genPick();
+  const playerPick = "img/waterrrr.png";
+  const opponentPick = getRandomPick();
+  setOpponentPick(opponentPick);
+  updateResult(playerPick, opponentPick);
 }
